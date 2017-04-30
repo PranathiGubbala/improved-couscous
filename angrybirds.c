@@ -8,8 +8,10 @@ int if_else2(int);
 void array1();
 void array2();
 int main(int argc, char *argv[]) {
-    if(argc != 2) {
+    if(argc < 2) {
         printf("insufficient arguments\n");
+    } else if (argc > 2) {
+	printf("only two arguments are required\n");
     } else {
     int a = atoi(argv[1]);
     int rec;
@@ -31,12 +33,12 @@ int main(int argc, char *argv[]) {
                     scanf("%d",&rec);
                     if(rec == 1) {
                         printf("_______________________________________________________________________________\n");
-                        printf("Enter the number for which you want to find factorial\nNote: Make sure that the number is not greater than 20\n");
+                        printf("Enter the integer for which you want to find factorial\nNote: Make sure that the integer is not greater than 20\n");
                         scanf("%d",&num);
                         printf("Factorial of %d is %ld\n", num, recursion1(num));
                     } else {
                         printf("_______________________________________________________________________________\n");
-                        printf("Enter two numbers for which you want to find G.C.D\n");
+                        printf("Enter two integers for which you want to find G.C.D\n");
                         scanf("%d%d", &num1, &num2);
                         printf("G.C.D of %d and %d is %d\n", num1, num2, recursion2(num1, num2));
                     }
@@ -53,11 +55,11 @@ int main(int argc, char *argv[]) {
                 do {
                     printf("...............................................................................\n");
                     printf("%s, Try the following.......answered using LOOPS\n",name);
-                    printf("If you want 'Fizzbuzz' enter '1'\nIf you want 'Sum of digits' of a given number enter '2'\n");
+                    printf("If you want 'Fizzbuzz' enter '1'\nIf you want 'Sum of digits' of a given integer enter '2'\n");
                     scanf("%d",&loops);
                     if(loops == 1) {
                         printf("_______________________________________________________________________________\n");
-                        printf("Here if the number is divisible by 3 'Fizz' is printed\nIf the number is divisible by 5 'Buzz' is printed\nIf the number is divisible by both 3 and 5 'FizzBuzz' is printed\n");
+                        printf("Here if the integer is divisible by 3 'Fizz' is printed\nIf the integer is divisible by 5 'Buzz' is printed\nIf the integer is divisible by both 3 and 5 'FizzBuzz' is printed\n");
                         printf("Enter the Start and End of the Range\n");
                         scanf("%d%d",&num1, &num2);
                         for(num = num1; num <= num2; num++) {
@@ -73,9 +75,9 @@ int main(int argc, char *argv[]) {
                         }
                     } else {
                         printf("_______________________________________________________________________________\n");
-                        printf("Enter the number for which you want to find the 'sum of the digits'\n");
+                        printf("Enter the integer for which you want to find the 'sum of the digits'\n");
                         scanf("%d",&num);
-                        printf("Sum of the digits of the given number is %ld\n",loop(num));
+                        printf("Sum of the digits of the given integer is %ld\n",loop(num));
                     }
                     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
                     printf("%s if you want to continue with 'loops' enter 'y' else enter 'n'\n",name);
@@ -89,12 +91,12 @@ int main(int argc, char *argv[]) {
                 do {
                     printf("................................................................................\n");
                     printf("%s,You are in IF ELSE\n",name);
-                    printf("If you want to check if a number is 'Prime' enter '1'\nIf you want to check if a year is 'Leap Year' enter '2'\n");
+                    printf("If you want to check if a integer is 'Prime' enter '1'\nIf you want to check if a year is 'Leap Year' enter '2'\n");
                     scanf("%d",&if_else);
                     if(if_else == 1) {
 
                         printf("____________________________________________________________________________\n");
-                        printf("Enter the number\n");
+                        printf("Enter the integer\n");
                         scanf("%d",&num);
                         if(if_else1(num) == 1) {
                             printf("%d is a Prime Number\n",num);
@@ -202,7 +204,7 @@ void array1() {
     int count = 0;
     int search;  
 
-    printf("Enter the size of the array :\n");
+    printf("Enter the size of the array :\n Note : Make sure that the array is one-dimensional\n ");
     scanf("%d",&n);
     printf("Enter the elements of the array in ascending order :\n");
     for(int i = 0; i < n; i++) {
