@@ -231,7 +231,7 @@ void array1() {
     if(count <= 0)
          printf("Sorry! Number not found.\n");
     else
-         printf("%d is found \n",count);
+         printf("%d is found \n",search);
 }
 void array2() {
     int i;
